@@ -35,7 +35,7 @@ public class CheckBinaryTree {
 
     }
 
-    private boolean isValidBST(Node root, Integer low, Integer high) {
+    public boolean isValidBST(Node root, Integer low, Integer high) {
 
         if(root==null) {
             return true;

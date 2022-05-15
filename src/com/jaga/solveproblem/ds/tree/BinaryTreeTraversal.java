@@ -22,29 +22,29 @@ public class BinaryTreeTraversal {
 
         System.out.println("In-order Traversal : ");
         List<Integer> inOrderList = new ArrayList<>();
-        inorder(tree.root,inOrderList);
-        print(inOrderList);
+        tree.inorder(tree.root,inOrderList);
+        tree.print(inOrderList);
 
         System.out.println("\n Pre-order Traversal : ");
         List<Integer> preOrderList = new ArrayList<>();
-        preOrder(tree.root,preOrderList);
-        print(preOrderList);
+        tree.preOrder(tree.root,preOrderList);
+        tree.print(preOrderList);
 
         System.out.println("\n Post-order Traversal : ");
         List<Integer> postOrderList = new ArrayList<>();
-        postOrder(tree.root,postOrderList);
-        print(postOrderList);
+        tree.postOrder(tree.root,postOrderList);
+        tree.print(postOrderList);
 
     }
 
-    private static void print(List<Integer> inOrderList) {
+    public void print(List<Integer> inOrderList) {
 
         for (Integer integer : inOrderList) {
             System.out.print(" "+integer);
         }
     }
 
-    private static void postOrder(Node node, List<Integer> postOrderList) {
+    public void postOrder(Node node, List<Integer> postOrderList) {
         if(node==null)
             return;
 
@@ -54,7 +54,7 @@ public class BinaryTreeTraversal {
         postOrderList.add(node.key);
     }
 
-    private static void preOrder(Node node, List<Integer> preOrderList) {
+    public void preOrder(Node node, List<Integer> preOrderList) {
         if(node==null)
             return;
 
@@ -65,7 +65,7 @@ public class BinaryTreeTraversal {
 
     }
 
-    private static void inorder(Node node, List<Integer> inOrderList) {
+    public void inorder(Node node, List<Integer> inOrderList) {
 
         if(node==null)
             return;
