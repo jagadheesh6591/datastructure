@@ -1,2 +1,19 @@
-package com.jaga.solveproblem.ds.linear_data_structure;public class FindMiddleNode {
+package com.jaga.solveproblem.ds.linear_data_structure;
+
+public class FindMiddleNode {
+
+    public ListNode middleNode(ListNode head) {
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast !=null && fast.next !=null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+
+    }
+
 }

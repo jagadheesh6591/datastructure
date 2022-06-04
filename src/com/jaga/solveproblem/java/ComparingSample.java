@@ -1,8 +1,13 @@
 package com.jaga.solveproblem.java;
 
+import com.jaga.solveproblem.common.MyUtil;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ComparingSample {
 
@@ -17,25 +22,20 @@ public class ComparingSample {
         for(Book book : books) {
             System.out.println(book);
         }
-
-
+        
+        //sorting
         books.stream().sorted(Comparator.comparing(Book::getId).thenComparing(Book::getSubId)).forEach(result -> System.out.println(result));
 
 
-        /*Collections.sort(books);
-
-        for(Book book : books) {
-            System.out.println(book);
-        }*/
-
+        Map<String, Book> collect1 = books.stream().collect(Collectors.toMap(Book::getName, Function.identity()));
+        for (Map.Entry<String, Book> stringBookEntry : collect1.entrySet()) {
+            System.out.println(stringBookEntry.getKey()+"="+stringBookEntry.getValue());
+        }
 
 
-        //MyUtil.iterate(books);
-
-
-
-
-
+        char[] chars = "jagadeesh".toCharArray();
+        Map<Character, Long> collect = "jagadeesh".chars().mapToObj(ch -> (char) ch).collect(Collectors.groupingBy(ch -> ch, Collectors.counting()));
+        MyUtil.iterateMap(collect);
 
 
     }

@@ -1,41 +1,74 @@
 package com.jaga.solveproblem.string;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import com.jaga.solveproblem.common.MyUtil;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SherlockValidString {
 
     public static void main(String[] args) {
-        boolean isValid = true;
-        String s = "abcdefghhgfedecba";
-        int allowedCount=2;
-        int count=0;
-        HashMap<Integer,Integer> occuranceStore = new HashMap<>();
+        boolean isValid = false;
+        //String s = "aabbccddeefghi";
+        String s = "ibfdgaeadiaefgbhbdghhhbgdfgeiccbiehhfcggchgghadhdhagfbahhddgghbdehidbibaeaagaeeigffcebfbaieggabcfbiiedcabfihchdfabifahcbhagccbdfifhghcadfiadeeaheeddddiecaicbgigccageicehfdhdgafaddhffadigfhhcaedcedecafeacbdacgfgfeeibgaiffdehigebhhehiaahfidibccdcdagifgaihacihadecgifihbebffebdfbchbgigeccahgihbcbcaggebaaafgfedbfgagfediddghdgbgehhhifhgcedechahidcbchebheihaadbbbiaiccededchdagfhccfdefigfibifabeiaccghcegfbcghaefifbachebaacbhbfgfddeceababbacgffbagidebeadfihaefefegbghgddbbgddeehgfbhafbccidebgehifafgbghafacgfdccgifdcbbbidfifhdaibgigebigaedeaaiadegfefbhacgddhchgcbgcaeaieiegiffchbgbebgbehbbfcebciiagacaiechdigbgbghefcahgbhfibhedaeeiffebdiabcifgccdefabccdghehfibfiifdaicfedagahhdcbhbicdgibgcedieihcichadgchgbdcdagaihebbabhibcihicadgadfcihdheefbhffiageddhgahaidfdhhdbgciiaciegchiiebfbcbhaeagccfhbfhaddagnfieihghfbaggiffbbfbecgaiiidccdceadbbdfgigibgcgchafccdchgifdeieicbaididhfcfdedbhaadedfageigfdehgcdaecaebebebfcieaecfagfdieaefdiedbcadchabhebgehiidfcgahcdhcdhgchhiiheffiifeegcfdgbdeffhgeghdfhbfbifgidcafbfcd";
+        String result = isValidString(s);
 
-        while(s.length()>0) {
-            Character c = s.charAt(0);
-            Integer occurrence = s.length()-s.replace(s.substring(0,1),"").length();
-            //System.out.println(c + " " +occurrence);
-            if(occuranceStore.get(occurrence)!=null) {
-                occuranceStore.put(occurrence,occuranceStore.get(occurrence)+1);
-            } else {
-                occuranceStore.put(occurrence,0);
+
+        System.out.println(result);
+
+    }
+
+    private static String isValidString(String s) {
+        String returnVal = "NO";
+
+        Map<Character, Integer> valuesFromString = getValuesFromString(s);
+        HashSet<Integer> set = new HashSet<Integer>(valuesFromString.values());
+
+        if(set.size()==1) {
+            returnVal= "YES";
+        } else if(set.size()>2) {
+            returnVal = "NO";
+        } else {
+            List<Integer> setVals = new HashSet<Integer>(valuesFromString.values()).stream().collect(Collectors.toList());
+
+            int occurance1=0;
+            int occurance2=0;
+            int el1=setVals.get(0);
+            int el2=setVals.get(1);
+
+            for(Integer i : valuesFromString.values()) {
+                if(el1==i) {
+                    occurance1= occurance1+ 1;
+                } else if(el2==i){
+                    occurance2= occurance2 +1;
+                }
             }
 
-            if(occuranceStore.size()>2) {
-                isValid=false;
+            if( ( occurance1==1&&el1==1)  || (occurance2==1&&el2==1)){
+                returnVal= "YES";
+            } else if(Math.abs(el1 - el2)  == 1 && (occurance1==1 || occurance2==1)) {
+                returnVal= "YES";
             }
 
-            s = s.replaceAll(s.substring(0,1),"");
         }
 
 
+        return returnVal;
+    }
 
+    static Map<Character, Integer> getValuesFromString(String str) {
 
-        occuranceStore.forEach((a,b)-> System.out.println(a + " " + b));
+      Map<Character,Integer> charCounts = new HashMap<>();
+      for(Character c : str.toCharArray()) {
+          if(charCounts.get(c)==null)
+              charCounts.put(c,1);
+          else
+              charCounts.put(c,charCounts.get(c)+1);
 
-        System.out.println(isValid);
+      }
 
+        MyUtil.iterateMap(charCounts);
+        return charCounts;
+        //return new HashSet<>(charCounts.values());
     }
 }
