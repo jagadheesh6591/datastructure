@@ -12,6 +12,7 @@ public class Palindrom {
 			n=n/10;
 		}
 		System.out.println(sum);
+
 		
 		
 	}
