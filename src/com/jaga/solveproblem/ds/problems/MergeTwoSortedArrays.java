@@ -46,7 +46,7 @@ public class MergeTwoSortedArrays {
 
         System.out.println("current j value "+j);
         System.out.println("current k value "+k);
-        Arrays.sort(a);
+       // Arrays.sort(a);
         return result;
     }
 
