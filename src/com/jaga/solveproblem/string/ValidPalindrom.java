@@ -7,6 +7,8 @@ public class ValidPalindrom {
         String str="A man, a plan, a canal: Panama";
         boolean result = isValidPalindrome(str);
         System.out.println("Result :: "+result);
+
+        System.out.println(Character.getNumericValue('A'));
     }
 
     private static boolean isValidPalindrome(String str) {
