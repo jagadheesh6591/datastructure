@@ -7,8 +7,6 @@ public class ValidPalindrom {
         String str="A man, a plan, a canal: Panama";
         boolean result = isValidPalindrome(str);
         System.out.println("Result :: "+result);
-
-        System.out.println(Character.getNumericValue('A'));
     }
 
     private static boolean isValidPalindrome(String str) {
@@ -28,4 +26,22 @@ public class ValidPalindrom {
 
         return true;
     }
+
+    public boolean isValidPalindrom(String str) {
+        int i=0,j=str.length()-1;
+
+        while(i<j) {
+            if( Character.toLowerCase(str.charAt(i))!= Character.toLowerCase(str.charAt(j))) {
+                return false;
+            }
+
+            i++;j--;
+        }
+
+        return true;
+
+    }
+
+
+
 }

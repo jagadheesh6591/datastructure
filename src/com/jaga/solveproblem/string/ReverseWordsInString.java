@@ -4,8 +4,10 @@ public class ReverseWordsInString {
 
     public static void main(String[] args) {
 
-        String str = "jaga is on fire";
+        String str = "jaga is    on fire";
         System.out.println(str.length());
+        System.out.println("reversed String "+reverseWordsInString(str));
+
         StringBuilder sb = new StringBuilder();
 
         int j= str.length();
@@ -23,10 +25,26 @@ public class ReverseWordsInString {
 
         }
 
-        int maxDiv10 = Integer.MAX_VALUE / 10;
-        System.out.println(maxDiv10);
+        //System.out.println(sb.toString());
 
-        System.out.println(sb.toString());
+    }
 
+    public static String reverseWordsInString(String string) {
+        // Reverse String and retain space.
+        StringBuilder sb = new StringBuilder(string.length());
+        int endIdx=string.length();
+        for (int i = string.length()-1; i >=0 ; i--) {
+
+            if(string.charAt(i)==' ') {
+                sb.append(" ");
+                endIdx=i;
+            } else if(i==0 || string.charAt(i-1)==' ') {
+                sb.append(string.substring(i,endIdx));
+                endIdx=i;
+            }
+
+        }
+
+        return sb.toString();
     }
 }
