@@ -1,9 +1,6 @@
 package com.jaga.solveproblem.queue;
 
 public class IntQueue {
-
-/* TODO Implement Queue */
-
     private int[] q;
     private int front,rear,size;
     private int capacity;

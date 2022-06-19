@@ -1,7 +1,9 @@
 package com.jaga.solveproblem.graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class NodeG {
 
@@ -21,9 +23,31 @@ public class NodeG {
         return array;
     }
 
+    public List<String> breadthFirstSearch(List<String> array) {
+
+        Queue<NodeG> queue = new LinkedList<>();
+        queue.add(this);
+
+        while(!queue.isEmpty()) {
+            queue.stream().map(node-> node.name).forEach(System.out::print);
+            NodeG head = queue.poll();
+            array.add(head.name);
+            System.out.println();
+            head.children.stream().map(node-> node.name).forEach(System.out::print);
+            System.out.println();
+            head.children.forEach(queue::add);
+            System.out.println();
+
+        }
+
+        return array;
+    }
+
+
+
     public NodeG addChild(String name) {
         NodeG child = new NodeG(name);
-        children.add(child);
-        return this;
+        this.children.add(child);
+        return child;
     }
 }
