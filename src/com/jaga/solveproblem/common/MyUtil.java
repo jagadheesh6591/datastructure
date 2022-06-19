@@ -19,4 +19,20 @@ public class MyUtil {
             System.out.print(" "+item);
         }
     }
+
+    public static void printStringIndex(String str) {
+        System.out.println();
+        for (int i = 0; i < str.length(); i++) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+        for (int i = 0; i < str.length(); i++) {
+            if(i>8)
+                System.out.print(str.charAt(i)+"  ");
+            else
+                System.out.print(str.charAt(i)+" ");
+        }
+        System.out.println();
+
+    }
 }
