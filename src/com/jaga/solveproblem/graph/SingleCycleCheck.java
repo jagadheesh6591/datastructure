@@ -18,7 +18,6 @@ public class SingleCycleCheck {
     private static boolean isSingleCycle(int[] array, int n, int numOfElementsVisited, int currentIdx) {
 
         while(numOfElementsVisited < n) {
-
             if(numOfElementsVisited >0 && currentIdx ==0) {
                 return false;
             }
