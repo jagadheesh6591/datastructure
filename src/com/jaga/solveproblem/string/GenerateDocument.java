@@ -83,10 +83,10 @@ public class GenerateDocument {
         System.out.println("result "+b);
 
         System.out.println("Store");
-        MyUtil.iterateMap(store);
+        MyUtil.iterateMapWithCharKey(store);
 
         System.out.println("StoreC");
-        MyUtil.iterateMap(storeC);
+        MyUtil.iterateMapWithCharKey(storeC);
 
         return false;
 

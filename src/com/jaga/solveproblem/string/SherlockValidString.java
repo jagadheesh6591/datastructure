@@ -67,7 +67,7 @@ public class SherlockValidString {
 
       }
 
-        MyUtil.iterateMap(charCounts);
+        MyUtil.iterateMapWithCharKey(charCounts);
         return charCounts;
         //return new HashSet<>(charCounts.values());
     }

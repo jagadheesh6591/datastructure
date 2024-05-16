@@ -24,6 +24,8 @@ public class StreamOperations {
             print(list);
             print(result);
 
+
+
             
 
     }

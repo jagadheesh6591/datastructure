@@ -16,7 +16,7 @@ public class RunLengthEncoding {
             }
             count+=1;
         }
-        sb.append(count).append(string.charAt(string.length()-1));
+//        sb.append(count).append(string.charAt(string.length()-1));
 
 
         System.out.println(sb.toString());

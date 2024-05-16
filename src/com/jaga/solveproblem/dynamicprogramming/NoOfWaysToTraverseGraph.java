@@ -18,7 +18,7 @@ public class NoOfWaysToTraverseGraph {
 //        for(int[] way : ways)
 //            Arrays.fill(way,0);
 
-        MyUtil.print2Array(ways);
+        //MyUtil.print2Array(ways);
 
         System.out.println();
 
@@ -36,7 +36,7 @@ public class NoOfWaysToTraverseGraph {
             }
         }
 
-        MyUtil.print2Array(ways);
+       // MyUtil.print2Array(ways);
 
         return ways[height-1][width-1];
     }

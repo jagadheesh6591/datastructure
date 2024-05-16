@@ -1,8 +1,6 @@
 package com.jaga.solveproblem.common;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MyUtil {
 
@@ -10,10 +8,13 @@ public class MyUtil {
         collection.forEach(a-> System.out.println(a));
     }
 
-    public static <T extends Object> void iterateMap(Map<Character, T> charCounts) {
+    public static <T extends Object> void iterateMapWithCharKey(Map<Character, T> charCounts) {
         charCounts.entrySet().forEach(System.out::println);
     }
 
+    public static void iterateMapWithStringKey(Map<String, Integer> storeRawString) {
+        storeRawString.entrySet().forEach(System.out::println);
+    }
     public static <T extends Object> void print(List<T> list) {
         for (T item : list) {
             System.out.print(" "+item);
@@ -43,4 +44,18 @@ public class MyUtil {
         }
         System.out.println();
     }
+
+    public static void iterateSet(Set<Character> result) {
+        result.forEach(a-> System.out.println(a));
+    }
+
+    public static void iterate(Set<String> result) {
+        result.forEach(a-> System.out.println(a));
+    }
+
+    public static void print(String[] result) {
+        Arrays.stream(result).forEach(System.out::print);
+    }
+
+
 }

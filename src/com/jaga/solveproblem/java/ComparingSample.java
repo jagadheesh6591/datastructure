@@ -35,7 +35,7 @@ public class ComparingSample {
 
         char[] chars = "jagadeesh".toCharArray();
         Map<Character, Long> collect = "jagadeesh".chars().mapToObj(ch -> (char) ch).collect(Collectors.groupingBy(ch -> ch, Collectors.counting()));
-        MyUtil.iterateMap(collect);
+        MyUtil.iterateMapWithCharKey(collect);
 
 
     }
