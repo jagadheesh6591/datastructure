@@ -16,7 +16,6 @@ public class TwoOutOfThree {
 
     public static List<Integer> twoOutOfThree(int[] nums1, int[] nums2, int[] nums3) {
 
-
         Set<Integer> result = new HashSet<>();
         Set<Integer> set1 = Arrays.stream(nums1).boxed().collect(Collectors.toSet());
         Set<Integer> set2 = Arrays.stream(nums2).boxed().collect(Collectors.toSet());
