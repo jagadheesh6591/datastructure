@@ -1,6 +1,4 @@
-package com.jaga.solveproblem.array.neetcode150;
-
-import com.jaga.solveproblem.common.MyUtil;
+package com.jaga.solveproblem.neetcode150.arraysandhashing;
 
 import java.util.*;
 

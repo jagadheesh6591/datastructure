@@ -1,4 +1,4 @@
-package com.jaga.solveproblem.array.neetcode150;
+package com.jaga.solveproblem.neetcode150.arraysandhashing;
 
 import java.util.HashSet;
 import java.util.Set;

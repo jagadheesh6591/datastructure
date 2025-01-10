@@ -1,6 +1,5 @@
-package com.jaga.solveproblem.array.neetcode150;
+package com.jaga.solveproblem.neetcode150.arraysandhashing;
 
-import java.net.Inet4Address;
 import java.util.HashMap;
 import java.util.Map;
 
