@@ -11,17 +11,19 @@ public class ValidPalindrom {
 
     private static boolean isValidPalindrome(String str) {
 
+        str = str.toLowerCase();
         int i=0,j=str.length()-1;
 
         while(i<j) {
 
             while(i<j&& !Character.isLetterOrDigit(str.charAt(i))){i++;}
             while(i<j&& !Character.isLetterOrDigit(str.charAt(j))){j--;}
-            if( Character.toLowerCase(str.charAt(i))!= Character.toLowerCase(str.charAt(j))) {
+            if( str.charAt(i) != str.charAt(j)) {
                 return false;
             }
 
-            i++;j--;
+            i++;
+            j--;
         }
 
         return true;
