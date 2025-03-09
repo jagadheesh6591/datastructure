@@ -7,9 +7,33 @@ public class BinarySearch {
 		BinarySearch binarySearch = new BinarySearch();
 		int a[]={5,9,11,16,19,23,38,56,72,98};
 		int n = a.length;
-		int result = binarySearch.doBinarySearch(a, 23, 0, n - 1);
+		//int result = binarySearch.doBinarySearch(a, 23, 0, n - 1);
+		int target = 72;
+		print(a);
+		int left = 0;
+		int right = a.length-1;
+		int result = -1;
+
+		while(left < right) {
+
+			int middle = (left + right) / 2;
+
+			if(a[middle] == target) {
+				result = middle;
+				break;
+			} else if(a[middle] > target) {
+				right = middle-1;
+			} else {
+				left = middle+1;
+			}
+
+		}
+
+		System.out.println("The result is === > ");
 		System.out.println(result);
 	}
+
+
 
 	private int doBinarySearch(int[] a, int d,int l, int r) {
 		print(a);
