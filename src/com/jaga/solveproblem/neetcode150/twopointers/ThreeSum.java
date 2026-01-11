@@ -1,7 +1,6 @@
 package com.jaga.solveproblem.neetcode150.twopointers;
 
 import com.jaga.solveproblem.common.MyUtil;
-import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
