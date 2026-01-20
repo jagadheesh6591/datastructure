@@ -1,7 +1,5 @@
 package com.jaga.solveproblem.neetcode150.twopointers;
 
-import static com.jaga.solveproblem.string.ValidPalindrom.isValidPalindrome;
-
 public class ValidPalindrome {
 
     public static void main(String[] args) {
