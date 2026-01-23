@@ -6,7 +6,7 @@ public class LongestSubStringNoDuplicateLetter {
 
     public static void main(String[] args) {
 
-        String str  = "clementisacap";
+        String str  = "jagadeesh";
 
         String longSubStr= str.substring(0,1);
         int leftIdx=0;
@@ -27,4 +27,5 @@ public class LongestSubStringNoDuplicateLetter {
 
 
     }
+
 }
